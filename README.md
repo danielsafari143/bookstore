@@ -127,7 +127,7 @@ Clone this repository to your desired folder:
 ```cd my-folder```
 
 
-```git clone https://github.com/danielsafari143/math.git```
+```git clone https://github.com/danielsafari143/bookstore.git```
 
 
 ### Install
