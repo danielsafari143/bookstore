@@ -1,27 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
 };
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/TlA8xDg8RJ8V9ECNyGY1/books';
+
+export const fetchBook = createAsyncThunk('books/fetchBooks', async () => {
+  try {
+    const data = await axios.get(url);
+    return data.data;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const creatBook = createAsyncThunk('books/createBook', async (book, thunkAPI) => {
+  const elm = JSON.stringify(book);
+  try {
+    await axios.post(url, elm, { headers: { 'Content-Type': 'application/json' } });
+    const response = thunkAPI.dispatch(fetchBook());
+    return response;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const removesBook = createAsyncThunk('books/removesBook', async (id, thunkAPI) => {
+  try {
+    await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/TlA8xDg8RJ8V9ECNyGY1/books/${id}`);
+    const response = thunkAPI.dispatch(fetchBook());
+    return response;
+  } catch (error) {
+    return error;
+  }
+});
 
 const booksSlice = createSlice({
   name: 'books',
@@ -32,9 +46,20 @@ const booksSlice = createSlice({
       state.books.push(action.payload);
     },
     removeBook: (state, action) => {
-      const filterdBook = state.books.filter((item) => item.item_id !== action.payload);
+      const filterdBook = state.books.filter((item) => item.id !== action.payload);
       state.books = filterdBook;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchBook.fulfilled, (state, action) => {
+      state.books = [];
+      Object.keys(action.payload).forEach((element) => {
+        const book = action.payload[element][0];
+        state.books.push({
+          id: element, title: book.title, author: book.author, category: book.category,
+        });
+      });
+    });
   },
 });
 
