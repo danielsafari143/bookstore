@@ -1,32 +1,208 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@400&display=swap');
+
+* {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+body {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: auto;
+  width: 90vw;
+  padding: 100px 20px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  width: 85vw;
+  height: 8.625rem;
+  border-radius: 4px;
+  padding: 10px 19.188px 11.625px 11.688px;
+  margin: 1.313rem 6.25rem 0;
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
+}
+
+.heade {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header {
+  font-family: 'Montserrat', sans-serif;
+  height: 4.938rem;
+  color: #0290ff;
+  background-color: white;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+.forme {
+  padding: 50px 40px 50px 40px;
+  color: #888;
+  width: 89vw;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inpt-cls {
+  padding: 10px;
+  width: 30vw;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin-top: 30px;
+}
+
+.btn-cls {
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: white;
+  border: none;
 }
 
 .link {
+  text-decoration: none;
   margin-left: 10px;
+  color: #121212;
+  padding-left: 10px;
+  font-size: small;
+}
+
+.link-live {
+  color: #e4e6eb;
+  padding-left: 20px;
+}
+
+.Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
+  border-image-slice: 1;
+  border-color: #379cf6;
+  border-radius: 50%;
+}
+
+.loading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.crt {
+  color: #bcbdc0;
+  font-size: small;
+}
+
+.crt-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-progress {
+  margin-top: 10px;
+}
+
+.btn-link {
+  border: none;
+  background-color: white;
+  color: #379cf6;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.category {
+  color: #bcbdc0;
+  font-weight: bolder;
+  font-size: small;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.author {
+  color: #379cf6;
+  font-size: small;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.icon {
+  width: 80px;
+}
+
+.completed {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.link-live:hover {
+  color: #121212;
 }
