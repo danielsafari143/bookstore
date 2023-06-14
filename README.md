@@ -104,13 +104,18 @@ this application is used to perform besics calculations in Javascript with React
 
 ### Key Features <a name="key-features"></a>
 
-- Set up 
+- Set up
+- Fetch data
+- Use redux 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+[Live demo ](https://bookstore-bxhq.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-[Live](https://bookstore-bxhq.onrender.com/)
+
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
