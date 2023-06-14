@@ -206,3 +206,21 @@ header {
 .link-live:hover {
   color: #121212;
 }
+
+.alert {
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  background-color: rgb(233, 149, 149);
+  border: 1px solid rgb(219, 105, 105);
+  padding: 20px;
+  border-radius: 5px;
+  color: rgb(129, 50, 50);
+  animation: hide 1s linear 4s 1 forwards;
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
